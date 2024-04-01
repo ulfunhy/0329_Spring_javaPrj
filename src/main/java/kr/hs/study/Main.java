@@ -1,9 +1,11 @@
 package kr.hs.study;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import kr.hs.study.beans.TestBean1;
+import kr.hs.study.beans.TestBean2;
+import kr.hs.study.beans.TestBean3;
+import kr.hs.study.config.BeanConfigClass;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         // BeanConfigClass.java파일을 읽어서 객체만들고 IoC(스프링) Container에 보관한다.
@@ -18,6 +20,9 @@ public class Main {
 
         TestBean2 t2 = ctx.getBean("new", TestBean2.class);
         System.out.println(t2);
+
+        TestBean3 t3 = ctx.getBean("a3", TestBean3.class);
+        System.out.println(t3);
 
         ctx.close();
     }
