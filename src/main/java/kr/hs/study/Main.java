@@ -3,6 +3,7 @@ package kr.hs.study;
 import kr.hs.study.beans.TestBean1;
 import kr.hs.study.beans.TestBean2;
 import kr.hs.study.beans.TestBean3;
+import kr.hs.study.beans.TestBean4;
 import kr.hs.study.config.BeanConfigClass;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -23,6 +24,9 @@ public class Main {
 
         TestBean3 t3 = ctx.getBean("a3", TestBean3.class);
         System.out.println(t3);
+
+        TestBean4 t4 = ctx.getBean(TestBean4.class);
+        System.out.println(t4);
 
         ctx.close();
     }

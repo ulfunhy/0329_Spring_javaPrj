@@ -3,10 +3,8 @@ package kr.hs.study.config;
 import kr.hs.study.beans.TestBean1;
 import kr.hs.study.beans.TestBean2;
 import kr.hs.study.beans.TestBean3;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
-import org.springframework.context.annotation.Scope;
+import kr.hs.study.beans.TestBean4;
+import org.springframework.context.annotation.*;
 
 // 스프링에게 명령을 내리는 설정파일
 @Configuration
@@ -31,5 +29,18 @@ public class BeanConfigClass {
     @Scope("prototype")
     public TestBean3 java3() {
         return new TestBean3();
+    }
+
+    @Bean
+    @Lazy
+    @Primary
+    public TestBean4 java4_1() {
+        return new TestBean4();
+    }
+
+    @Bean
+    @Lazy
+    public TestBean4 java4_2() {
+        return new TestBean4();
     }
 }
